@@ -10,6 +10,10 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 353px;
 }
 
 .card__image {
@@ -42,6 +46,7 @@
   .card__title {
     font-size: 16px;
     line-height: 16px;
+    max-width: 230px;
   }
 
   .card__like-button {
