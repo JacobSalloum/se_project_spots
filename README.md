@@ -17,4 +17,4 @@ In this website, you are able to post images with the "new post" button and add 
 
 This project is deployed on GitHub pages/
 
-- Deployment Link:
+- [Deployment Link](https://jacobsalloum.github.io/se_project_spots/)
