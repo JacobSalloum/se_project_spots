@@ -1,9 +1,15 @@
 .content {
-  padding: 80px 80px 40px;
+  padding: 0 80px 40px;
 }
 
 @media screen and (max-width: 628px) {
   .content {
-    padding: 0 80px 40px;
+    padding: 0 80px 20px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .content {
+    padding: 0 16px 20px;
   }
 }
