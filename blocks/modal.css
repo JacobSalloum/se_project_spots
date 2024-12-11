@@ -13,7 +13,7 @@
   visibility: hidden;
 }
 
-.model_opened {
+.modal_opened {
   visibility: visible;
 }
 
@@ -27,7 +27,7 @@
   border-radius: 8px;
 }
 
-.modal__close-btn {
+.modal__close-button {
   background-image: url("../images/modal.close.icon.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@
   height: 40px;
 }
 
-.modal__close-btn:hover {
+.modal__close-button:hover {
   background-image: url("../images/modal.close.icon.hover.png");
   cursor: pointer;
 }
@@ -76,7 +76,7 @@
   cursor: pointer;
 }
 
-.modal__submit-btn {
+.modal__submit-button {
   width: 156px;
   height: 52px;
   border-radius: 8px;
@@ -89,7 +89,7 @@
   line-height: 20px;
 }
 
-.modal__submit-btn:hover {
+.modal__submit-button:hover {
   background-color: rgba(33, 33, 33, 0.8);
   cursor: pointer;
 }
@@ -107,7 +107,7 @@
     margin: 10px 0 34px;
   }
 
-  .modal__close-btn {
+  .modal__close-button {
     top: 12px;
     right: 12px;
   }
@@ -116,7 +116,7 @@
     margin: 0 0 24px;
   }
 
-  .modal__submit-btn {
+  .modal__submit-button {
     width: 100%;
   }
 }
