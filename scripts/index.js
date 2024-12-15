@@ -1,4 +1,4 @@
-const initialcards = [
+const initialCards = [
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -25,8 +25,6 @@ const initialcards = [
   },
 ];
 
-console.log(initialcards);
-
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileNname = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -42,6 +40,23 @@ const editModalNameInput = editProfileModal.querySelector(
 const editModalDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
+
+const cardTemplate = document.querySelector("#card-template");
+const cardList = document.querySelector(".cards__list");
+
+function getCradElemnt(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+
+  const cardNameEl = cardElement.querySelector(".card__title");
+  const cardImgEl = cardElement.querySelector(".card__image");
+  cardNameEl.textContent = data.name;
+  cardImgEl.src = data.link;
+  cardImgEl.alt = data.name;
+
+  return cardElement;
+}
 
 function openModal() {
   editModalNameInput.value = profileNname.textContent;
@@ -60,7 +75,10 @@ function handleEditFormSubmit(evt) {
   closeModal();
 }
 profileEditButton.addEventListener("click", openModal);
-
 editModalCloseButton.addEventListener("click", closeModal);
-
 editFormElement.addEventListener("submit", handleEditFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCradElemnt(initialCards[i]);
+  cardList.prepend(cardElement);
+}
