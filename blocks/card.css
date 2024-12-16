@@ -37,6 +37,7 @@
 
 .card__like-button:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
