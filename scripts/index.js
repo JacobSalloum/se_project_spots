@@ -78,7 +78,12 @@ profileEditButton.addEventListener("click", openModal);
 editModalCloseButton.addEventListener("click", closeModal);
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
-for (let i = 0; i < initialCards.length; i++) {
+/*for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCradElemnt(initialCards[i]);
   cardList.prepend(cardElement);
-}
+} */
+
+initialCards.forEach((item) => {
+  const cardElement = getCradElemnt(item);
+  cardList.prepend(cardElement);
+});
