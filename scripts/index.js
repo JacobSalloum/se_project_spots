@@ -44,6 +44,10 @@ const editModalDescriptionInput = editProfileModal.querySelector(
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 
+const cardModal = document.querySelector("#add-card-modal");
+const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
+const cardAddButton = document.querySelector(".profile__add-button");
+
 function getCradElemnt(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -58,32 +62,41 @@ function getCradElemnt(data) {
   return cardElement;
 }
 
-function openModal() {
-  editModalNameInput.value = profileNname.textContent;
-  editModalDescriptionInput.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal_opened");
+function openModal(modal) {
+  modal.classList.add("modal_opened");
 }
 
-function closeModal() {
-  editProfileModal.classList.remove("modal_opened");
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileNname.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  closeModal();
+  closeModal(editProfileModal);
 }
-profileEditButton.addEventListener("click", openModal);
-editModalCloseButton.addEventListener("click", closeModal);
-editFormElement.addEventListener("submit", handleEditFormSubmit);
+profileEditButton.addEventListener("click", () => {
+  editModalNameInput.value = profileNname.textContent;
+  editModalDescriptionInput.value = profileDescription.textContent;
+  openModal(editProfileModal);
+});
 
-/*for (let i = 0; i < initialCards.length; i++) {
-  const cardElement = getCradElemnt(initialCards[i]);
-  cardList.prepend(cardElement);
-} */
+editModalCloseButton.addEventListener("click", () => {
+  closeModal(editProfileModal);
+});
+
+editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 initialCards.forEach((item) => {
   const cardElement = getCradElemnt(item);
   cardList.prepend(cardElement);
+});
+
+cardAddButton.addEventListener("click", () => {
+  openModal(cardModal);
+});
+
+cardModalCloseButton.addEventListener("click", () => {
+  closeModal(cardModal);
 });
