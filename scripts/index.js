@@ -52,6 +52,15 @@ const addCardForm = cardModal.querySelector(".modal__form");
 const addCardLinkInput = cardModal.querySelector("#add-card-link-input");
 const addCardNameInput = cardModal.querySelector("#add-card-name-input");
 
+const previewModal = document.querySelector("#preview__modal");
+const previewModalImg = previewModal.querySelector(".modal__image");
+const previewModalCaption = previewModal.querySelector(
+  ".modal__caption_type_preview"
+);
+const previewModalCloseButton = previewModal.querySelector(
+  ".modal__close-button_type_preview"
+);
+
 function getCradElemnt(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -66,6 +75,17 @@ function getCradElemnt(data) {
   cardNameEl.textContent = data.name;
   cardImgEl.src = data.link;
   cardImgEl.alt = data.name;
+
+  cardImgEl.addEventListener("click", () => {
+    previewModal.classList.add("modal_opened");
+    previewModalImg.src = data.link;
+    previewModalCaption.textContent = data.name;
+    previewModalImg.alt = data.name;
+  });
+
+  previewModalCloseButton.addEventListener("click", () => {
+    closeModal(previewModal);
+  });
 
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_liked");
