@@ -135,6 +135,15 @@
   .modal__container {
     padding: 12px;
   }
+
+  .modal__container_type_preview {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px;
+    width: 100%;
+    padding: 0;
+  }
+
   .modal__title {
     font-size: 20px;
     line-height: 20px;
@@ -156,6 +165,7 @@
 
   .modal__image {
     width: 100%;
+    border-radius: 8px;
   }
   .modal__caption_type_preview {
     font-size: 16px;
@@ -164,11 +174,12 @@
   }
 
   .modal__close-button_type_preview {
-    position: absolute;
     padding: 0;
+    position: absolute;
+    bottom: -8px;
+    top: -48px;
+    right: 0;
   }
 }
 
-/* figure out how to make this preview responsive
-
-// position the close button correctly */
+/* maybe fix the mobile view and add transitions */
