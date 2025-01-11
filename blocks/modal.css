@@ -11,10 +11,13 @@
   flex-direction: column;
   padding: 0 20px;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in, visibility 0.5s ease-out;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -181,5 +184,3 @@
     right: 0;
   }
 }
-
-/* maybe fix the mobile view and add transitions */
