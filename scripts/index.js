@@ -23,6 +23,10 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+  {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -30,7 +34,7 @@ const profileNname = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editFormElement = editProfileModal.querySelector(".modal__form");
+const editFormElement = editProfileModal.querySelector("#modal__form");
 const editModalCloseButton = editProfileModal.querySelector(
   ".modal__close-button"
 );
@@ -77,14 +81,10 @@ function getCradElemnt(data) {
   cardImgEl.alt = data.name;
 
   cardImgEl.addEventListener("click", () => {
-    previewModal.classList.add("modal_opened");
+    openModal(previewModal);
     previewModalImg.src = data.link;
     previewModalCaption.textContent = data.name;
     previewModalImg.alt = data.name;
-  });
-
-  previewModalCloseButton.addEventListener("click", () => {
-    closeModal(previewModal);
   });
 
   cardLikeButton.addEventListener("click", () => {
@@ -143,10 +143,16 @@ initialCards.forEach((item) => {
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardModal);
+  addCardLinkInput.value = "";
+  addCardNameInput.value = "";
 });
 
 cardModalCloseButton.addEventListener("click", () => {
   closeModal(cardModal);
+});
+
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 addCardForm.addEventListener("submit", handleAddCardSubmit);
