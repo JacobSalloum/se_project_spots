@@ -36,7 +36,6 @@
   opacity: 40%;
   margin: 12px 0 0;
   padding: 0;
-  background-color: transparent;
   background-color: #fcf5e5;
   background-repeat: no-repeat;
 }
@@ -47,14 +46,15 @@
 }
 
 .card__like-button_liked {
-  background-image: url("../images/like__icon_liked.svg");
+  background-image: url("../images/like-icon-liked.svg");
   opacity: 1;
-  background-color: #fcf5e5;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card__like-button_liked:hover {
   background-image: url("../images/like__icon_unliked.svg");
+  opacity: 1;
 }
 
 .card__delete-button {
