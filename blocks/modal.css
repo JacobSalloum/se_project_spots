@@ -43,7 +43,7 @@
   border-radius: 8px;
 }
 
-.modal__caption_type_preview {
+.modal__caption {
   margin: 12px 0 0;
   padding: 4px 8px;
   color: #fff;
@@ -131,7 +131,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 641px) {
   .modal {
     padding: 0 10px;
   }
@@ -170,7 +170,7 @@
     width: 100%;
     border-radius: 8px;
   }
-  .modal__caption_type_preview {
+  .modal__caption {
     font-size: 16px;
     line-height: 19.2px;
     margin: 8.4px 0 0;
