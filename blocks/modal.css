@@ -131,6 +131,11 @@
   cursor: pointer;
 }
 
+.modal__error {
+  color: rgba(255, 0, 0, 0.7);
+  line-height: 17.6px;
+}
+
 @media screen and (max-width: 1040px) {
   .modal__container_type_preview {
     width: 100%;
