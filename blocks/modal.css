@@ -108,6 +108,10 @@
   line-height: 20px;
 }
 
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
 .modal__input:hover {
   border: #212121 1px solid;
   cursor: pointer;
