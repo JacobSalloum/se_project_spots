@@ -130,6 +130,10 @@
   line-height: 20px;
 }
 
+.modal__submit-button_disabled {
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
 .modal__submit-button:hover {
   background-color: rgba(33, 33, 33, 0.8);
   cursor: pointer;
