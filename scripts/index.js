@@ -29,6 +29,7 @@ const initialCards = [
   },
 ];
 
+const modalList = document.querySelectorAll(".modal");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileNname = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -81,6 +82,14 @@ function getCradElemnt(data) {
 
   cardImgEl.addEventListener("click", () => {
     openModal(previewModal);
+    {
+      document.addEventListener("keydown", function (evt) {
+        if (evt.key === "Escape") {
+          closeModal(previewModal);
+          document.removeEventListener("keydown", function (evt) {});
+        }
+      });
+    }
     previewModalImg.src = data.link;
     previewModalCaption.textContent = data.name;
     previewModalImg.alt = data.name;
@@ -129,6 +138,14 @@ profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileNname.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
   openModal(editProfileModal);
+  {
+    document.addEventListener("keydown", function (evt) {
+      if (evt.key === "Escape") {
+        closeModal(editProfileModal);
+        document.removeEventListener("keydown", function (evt) {});
+      }
+    });
+  }
 });
 
 editModalCloseButton.addEventListener("click", () => {
@@ -144,6 +161,14 @@ initialCards.forEach((item) => {
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardModal);
+  {
+    document.addEventListener("keydown", function (evt) {
+      if (evt.key === "Escape") {
+        closeModal(cardModal);
+        document.removeEventListener("keydown", function (evt) {});
+      }
+    });
+  }
 });
 
 cardModalCloseButton.addEventListener("click", () => {
@@ -155,3 +180,11 @@ previewModalCloseButton.addEventListener("click", () => {
 });
 
 addCardForm.addEventListener("submit", handleAddCardSubmit);
+
+modalList.forEach((modal) => {
+  modal.addEventListener("click", function (event) {
+    if (event.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
+});
