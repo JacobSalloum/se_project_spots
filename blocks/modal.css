@@ -69,7 +69,7 @@
   height: 40px;
 }
 
-.modal__close-button_type_preview {
+.modal__close-button {
   background-image: url("../images/modal_preview_close_button.svg");
   top: 0;
   right: -52.7px;
@@ -197,7 +197,7 @@
     margin: 8px 0 0;
   }
 
-  .modal__close-button_type_preview {
+  .modal__close-button {
     padding: 0;
     position: absolute;
     bottom: -8px;
