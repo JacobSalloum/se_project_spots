@@ -69,15 +69,26 @@
   height: 40px;
 }
 
-.modal__close-button {
+.modal__preview_close-button {
   background-image: url("../images/modal_preview_close_button.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
   top: 0;
   right: -52.7px;
   opacity: 1;
   background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: none;
 }
 
 .modal__close-button:hover {
+  background-image: url("../images/modal.close.icon.hover.png");
+  cursor: pointer;
+}
+
+.modal__preview_close-button:hover {
   background-image: url("../images/modal.close.icon.hover.png");
   cursor: pointer;
 }

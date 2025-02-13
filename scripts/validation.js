@@ -13,16 +13,17 @@ const showInputError = (formEl, inputEl, errorMessage, config) => {
   inputEl.classList.add(config.inputErrorClass);
 };
 
-const hideInputError = (formEl, inputEl) => {
+const hideInputError = (formEl, inputEl, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = "";
+  inputEl.classList.remove(config.inputErrorClass);
 };
 
 const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, config);
   }
 };
 
@@ -67,8 +68,8 @@ const enableValidation = (config) => {
 };
 
 const resetValidation = (inputList, formEl) => {
-  inputList.forEach((input) => {
-    hideInputError(formEl, input);
+  inputList.forEach((input, config) => {
+    hideInputError(formEl, input, config);
   });
 };
 enableValidation(settings);
