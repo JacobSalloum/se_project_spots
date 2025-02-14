@@ -208,7 +208,7 @@
     margin: 8px 0 0;
   }
 
-  .modal__close-button {
+  .modal__preview_close-button {
     padding: 0;
     position: absolute;
     bottom: -8px;

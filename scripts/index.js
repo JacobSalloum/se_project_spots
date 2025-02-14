@@ -72,6 +72,10 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(popup));
 });
 
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
 function getCradElemnt(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -172,8 +176,4 @@ modalList.forEach((modal) => {
       closeModal(modal);
     }
   });
-});
-
-previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
 });
