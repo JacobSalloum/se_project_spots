@@ -1,3 +1,17 @@
+import "./index.css";
+
+import {
+  enableValidation,
+  settings,
+  disableButton,
+  resetValidation,
+} from "../scripts/validation.js";
+// IMPORT THE REST OF THE IMAGES
+import spotsLogoSrc from "../images/spots.logo.svg";
+
+const spotsLogo = document.getElementById("spots-logo");
+spotsLogo.src = spotsLogoSrc;
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -76,7 +90,7 @@ previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
-function getCradElemnt(data) {
+function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
@@ -133,7 +147,7 @@ function handleAddCardSubmit(evt) {
     name: addCardNameInput.value,
     link: addCardLinkInput.value,
   };
-  const cardElement = getCradElemnt(inputValues);
+  const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
   addCardForm.reset();
   closeModal(cardModal);
@@ -160,7 +174,7 @@ profileEditButton.addEventListener("click", () => {
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 initialCards.forEach((item) => {
-  const cardElement = getCradElemnt(item);
+  const cardElement = getCardElement(item);
   cardList.prepend(cardElement);
 });
 
@@ -177,3 +191,5 @@ modalList.forEach((modal) => {
     }
   });
 });
+
+enableValidation(settings);
