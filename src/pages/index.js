@@ -8,9 +8,21 @@ import {
 } from "../scripts/validation.js";
 // IMPORT THE REST OF THE IMAGES
 import spotsLogoSrc from "../images/spots.logo.svg";
+import profileAvatarSrc from "../images/spots.avatar.jpg";
+import editPencilIconSrc from "../images/spots.edit.svg";
+import plusIconSrc from "../images/plus.icon.svg";
 
 const spotsLogo = document.getElementById("spots-logo");
 spotsLogo.src = spotsLogoSrc;
+
+const profileAvatar = document.getElementById("profile-avatar");
+profileAvatar.src = profileAvatarSrc;
+
+const editPencilIcon = document.getElementById("profile-pencil-icon");
+editPencilIcon.src = editPencilIconSrc;
+
+const plusIcon = document.getElementById("plus-icon");
+plusIcon.src = plusIconSrc;
 
 const initialCards = [
   {
