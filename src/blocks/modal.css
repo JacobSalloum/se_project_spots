@@ -35,6 +35,12 @@
   max-width: 446px;
 }
 
+.modal__delete_container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .modal__image {
   width: 100%;
   max-width: 80vw;
@@ -69,7 +75,7 @@
   height: 40px;
 }
 
-.modal__preview_close-button {
+.modal__outter_close-button {
   background-image: url("../images/modal_preview_close_button.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -88,7 +94,7 @@
   cursor: pointer;
 }
 
-.modal__preview_close-button:hover {
+.modal__outter_close-button:hover {
   background-image: url("../images/modal.close.icon.hover.png");
   cursor: pointer;
 }
@@ -98,6 +104,15 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 32px;
+}
+
+.modal__delete_title {
+  margin: 0 0 32px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 .modal__label {
@@ -150,6 +165,45 @@
   cursor: pointer;
 }
 
+.modal__delete-button {
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 18px 0;
+  background-color: #ff6565;
+  color: #212121;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+.modal__delete-button:hover {
+  cursor: pointer;
+  background-color: #ff3333;
+}
+
+.modal__cancel-button {
+  background-color: #fff;
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 18px 0;
+  color: #212121;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.modal__cancel-button:hover {
+  cursor: pointer;
+  background-color: #212121;
+  color: #fff;
+}
+
 .modal__error {
   color: rgba(255, 0, 0, 0.7);
   line-height: 17.6px;
@@ -177,10 +231,26 @@
     padding: 0;
   }
 
+  .modal__delete_container {
+    display: grid;
+    gap: 12px;
+    justify-content: center;
+    padding: 0 0 12px;
+  }
+
   .modal__title {
     font-size: 20px;
     line-height: 20px;
     margin: 10px 0 34px;
+  }
+
+  .modal__delete_title {
+    margin: 0 0 20px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
   }
 
   .modal__close-button {
@@ -208,7 +278,7 @@
     margin: 8px 0 0;
   }
 
-  .modal__preview_close-button {
+  .modal__outter_close-button {
     padding: 0;
     position: absolute;
     bottom: -8px;
