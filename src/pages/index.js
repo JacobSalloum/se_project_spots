@@ -13,8 +13,8 @@ import editPencilIconSrc from "../images/spots.edit.svg";
 import plusIconSrc from "../images/plus.icon.svg";
 import editPencilLightIconSrc from "../images/spots.edit.light.png";
 
-import Api from "../../utils/Api.js";
-import { setButtonText } from "../../utils/helpers.js";
+import Api from "../utils/Api.js";
+import { setButtonText } from "../utils/helpers.js";
 
 const spotsLogo = document.getElementById("spots-logo");
 spotsLogo.src = spotsLogoSrc;
@@ -71,7 +71,7 @@ const profileNname = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editFormElement = editProfileModal.querySelector("#modal__form");
+const editFormElement = document.forms["edit-profile-form"];
 const editModalNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -86,7 +86,7 @@ const cardList = document.querySelector(".cards__list");
 
 const cardModal = document.querySelector("#add-card-modal");
 const cardAddButton = document.querySelector(".profile__add-button");
-const addCardForm = cardModal.querySelector(".modal__form");
+const addCardForm = document.forms["add-card-form"];
 const cardLikeButton = document.querySelector(".card__like-button");
 
 // Add card
@@ -101,13 +101,13 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 
 // Avatar
 const avatarModal = document.querySelector("#edit-avatar-modal");
-const avatarForm = avatarModal.querySelector(".modal__form");
+const avatarForm = document.forms["modal-avatar-form"];
 const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-button");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 
 // Dekete
 const deleteModal = document.querySelector("#delete-card-modal");
-const deleteForm = deleteModal.querySelector(".modal__form");
+const deleteForm = document.forms["modal-delete-form"];
 
 // Close Buttons
 const closeButtons = document.querySelectorAll(".modal__close-button");
@@ -216,7 +216,7 @@ function handleDeleteSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      submitBtn.textContent = "Delete";
+      setButtonText(submitBtn, false, "Delete");
     });
 }
 
@@ -238,7 +238,7 @@ function handleEditFormSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      submitBtn.textContent = "Save";
+      setButtonText(submitBtn, false);
     });
 }
 
@@ -258,14 +258,14 @@ function handleAddCardSubmit(evt) {
       const cardElement = getCardElement(newCard);
       cardList.prepend(cardElement);
       addCardForm.reset();
+      disableButton(submitButton, settings);
       closeModal(cardModal);
     })
     .catch((err) => {
       console.error(err);
     })
     .finally(() => {
-      disableButton(submitButton, settings);
-      submitBtn.textContent = "Save";
+      setButtonText(submitBtn, false);
     });
 }
 
@@ -283,7 +283,7 @@ function handleAvatarSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      submitBtn.textContent = "Save";
+      setButtonText(submitBtn, false);
     });
 }
 
