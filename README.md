@@ -12,6 +12,9 @@ In this website, you are able to post images with the "new post" button and add 
 - CSS
 - Responsive Design
 - Figma
+- JavaScript
+- Webpack
+- NPM
 
 ## Deployment
 
@@ -21,4 +24,6 @@ This project is deployed on GitHub pages/
 
 ## Informational Video
 
-- [Video Link](https://www.loom.com/share/29ecac4029e1460c8d01076fc0fede3c?sid=6d82b047-b9b8-47b6-ae88-0f6143346463)
+- [Video Link 2](https://www.loom.com/share/29ecac4029e1460c8d01076fc0fede3c?sid=6d82b047-b9b8-47b6-ae88-0f6143346463)
+
+- [Video Link 1](https://www.loom.com/share/29ecac4029e1460c8d01076fc0fede3c?sid=6d82b047-b9b8-47b6-ae88-0f6143346463)
